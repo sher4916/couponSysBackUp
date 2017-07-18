@@ -1,0 +1,38 @@
+<!--<head>
+     <link rel="stylesheet" href="../CSS/w3.css">
+</head>-->
+<!--<img src="coupons.jpg"><br><br>-->
+<div class="details" ng-controller="PurchaseCtrl as d">
+<h3> <b>Here are your Coupons</b></h3>
+
+<a >    Submit a price to view your coupons up to their cost price</a><br/>
+  
+ <a > enter a price: </a>  <input ng-model="d.coupon.price" value="price" type="text"></input>
+    <input class="btn-primary btn-lg" ng-click="d.filterByPrice()" value="price" type="button"></input><br/><br/>
+   <div class="table-responsive">
+    <table class="table table-hover">
+        <tr>
+           <th>Coupon ID</th>
+            <th>Coupon Title</th>
+            <th>Coupon Price</th>
+            <th>Coupon Description</th>
+            <th>Category</th>
+            <th>Valid From</th>
+            <th>Expiration Date</th>
+            <!--<th>Coupon Image</th>-->
+            <tr>
+
+                <tr ng-repeat="c in d.coupons ">
+                    <td>{{c.id}}</td>
+                    <td>{{c.title}}</td>
+                     <td>{{c.price}}</td>
+                    <td>{{c.message}}</td>
+                    <td>{{c.type}}</td>
+                    <td>{{c.startDate | date:'longDate'}}</td>
+                    <td>{{c.endDate | date:'longDate'}}</td>
+                    <!--<td>{{c.image}}</td>-->
+                </tr>
+    </table>
+   </div>
+   <my-kendall></my-kendall>
+</div>

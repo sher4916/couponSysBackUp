@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Fancy Login Form</title>
+  <link rel='shortcut icon' type='image/x-icon' href='http://localhost:8080/couponB/CSS/images/favicon.ico' />
+ <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/couponB/CSS/images/favicon-16x16.png" >
+
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/couponB/CSS/images/favicon-32x32.png">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="login.css">
+	<!--<script src="auth.srvs.js"></script>-->
+	 <script src="../angular.js"></script>
+    <script src="../angular-ui-router.js"></script>
+    <script src="../bootstrap.js"></script>
+	<!--<script src="login.srvs.js"></script>-->
+	<!--<script src="login.ctrl.js"></script>-->
+<style>
+	div.visible{
+		visibility: visible
+	}
+	div.hidden{
+		visibility: hidden
+	}
+</style>
+</head>
+
+<body onload="loginFailed()" ng-controller="LoginController as vm">
+	<form 
+	name="login-form" class="login-form"
+		action="http://localhost:8080/couponB/Login" method="post">
+<!--	<form class="login-form" name="form">-->
+
+		<div class="header">
+			<h1>Welcome Mate...</h1>
+			<span>Please, fill this login form</span>
+		</div>
+		<div class="hidden" style="color: red"> OOOPS... Please Check Your Credentials</div>
+
+		<div class="content">
+			<input id="username" name="username" type="text" class="input username" placeholder="Username" ng-model="vm.username" required
+			/>
+
+			<div class="user-icon"></div>
+			<div>
+				<input id="password" name="password" type="password" class="input password" placeholder="Password" ng-model="vm.password"
+				 required /></div>
+
+			<div class="pass-icon"></div>
+			<select ng-model="vm.usertype" id="usertype" name="usertype">
+							<option value="Customer">Customer</option>
+							<option value="Company">Company</option>
+							<option value="Administrator">Administrator</option>
+			</select>
+
+
+		</div>
+
+		<div class="footer">
+			<button ng-click="vm.login()" type="submit" class="button">Login</button>
+		</div>
+
+	</form>
+<script>
+	function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+
+}
+		function loginFailed() {
+   var cookie=getCookie(loginFailed);
+   if(cookie==null){
+	   
+   }
+}
+	</script>
+
+</body>
+
+</html>

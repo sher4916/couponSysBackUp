@@ -1,0 +1,23 @@
+<!--<img src="../CSS/images/account.png" alt="account" class="btn2">
+</img>
+<div ng-controller="CompanyCtrl as b"  class="btn1">
+    <p>Account ID: {{b.company.id}}</p>
+    <p>Company Name: {{b.company.compName}}</p>
+    <p>Password: {{b.company.password}}</p>
+    <p>Email: {{b.company.email}}</p>
+ </div>  
+
+<hr/>-->
+<div class="details" ng-controller="CompanyCtrl as b">
+   
+      <details-directive
+      user-id="b.company.id"
+      name-name="b.company.compName"
+      password-pass="b.company.password"
+      email-email="b.company.email"
+      type-type= "Company">
+      </details-directive>
+
+</div>
+<hr/>
+

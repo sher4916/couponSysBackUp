@@ -1,0 +1,36 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../CSS/w3.css">
+</head>
+<body>
+<div class="imagewrap">
+    <img  class="mySlides" src="..\CSS\images\1.PNG">
+    <img class="mySlides" src="..\CSS\images\2.PNG">
+    <img class="mySlides" src="..\CSS\images\3.PNG">
+
+
+<button class="buttonLeft" onclick="plusDivs(-1)">&#10094;</button>
+<button class="buttonRight" onclick="plusDivs(+1)">&#10095;</button>
+ 
+</div>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+plusDivs=function(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+</body>
+</html>

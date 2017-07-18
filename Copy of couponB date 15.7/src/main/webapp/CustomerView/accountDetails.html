@@ -1,0 +1,20 @@
+<!--<img src="../CSS/images/account.png" alt="account" class="btn2">
+</img>
+<div class="btn1" ng-controller="PurchaseCtrl as b">
+    <a>Account ID: {{b.customer.id}}</a><br/>
+    <a>User Name: {{b.customer.custName}}</a><br/>
+    <a>Password: {{b.customer.password}}</a><br/>
+</div>-->
+ <head>
+      <link rel="stylesheet" href="../CSS/w3.css">
+ </head>
+<div class="details" ng-controller="PurchaseCtrl as b">
+ 
+      <details-directive
+      user-id="b.customer.id"
+      name-name="b.customer.custName"
+      password-pass="b.customer.password"
+      type-type= "User">
+      </details-directive>
+
+</div>

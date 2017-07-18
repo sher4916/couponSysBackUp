@@ -1,0 +1,45 @@
+<body id="main_body">
+
+	<div ng-controller="adminCtrl as a" id="form_container">
+
+		<h1 style="margin-left:3%">Create A new Company</h1>
+		<form id="form_36253" class="appnitro">
+			<div class="form_description">
+
+			</div>
+			<ul>
+				<div class="form-group">
+					<li id="li_1">
+						<label class="description" for="element_1">Company Name </label>
+						<div>
+							<input ng-model="a.company.compName" id="element_1" name="element_1" class="element text medium" type="text" maxlength="255"
+							 value="" />
+						</div>
+					</li>
+				</div><br/>
+				<li id="li_4">
+					<label class="description" for="element_2">Company Password </label>
+					<div>
+						<input ng-model="a.company.password" id="element_2" name="element_2" class="element text medium" type="text" maxlength="255"
+						 value="" />
+					</div>
+				</li><br/>
+				<li id="li_5">
+					<label class="description" for="element_3">Company Email </label>
+					<div>
+						<input ng-model="a.company.email" id="element_3" name="element_3" class="element text medium" type="text" maxlength="255"
+						 value="" />
+					</div>
+				</li><br/>
+
+				<li class="buttons">
+					<input type="hidden" name="form_id" value="36253" />
+
+					<input ng-click="a.createCompany()" id="saveForm" class="button_text" type="button" name="create" value="create" />
+				</li>
+			</ul>
+		</form>
+
+	</div>
+
+</body>

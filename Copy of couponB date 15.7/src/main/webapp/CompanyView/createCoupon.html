@@ -1,0 +1,109 @@
+<!DOCTYPE html5>
+<!-- cdn for modernizr, if you haven't included it already -->
+<script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
+<!-- polyfiller file to detect and load polyfills -->
+<script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
+<script>
+	webshims.setOptions('waitReady', false);
+	webshims.setOptions('forms-ext', { types: 'date' });
+	webshims.polyfill('forms forms-ext');
+
+</script>
+<link rel="icon" href="data:;base64,=">
+<div style="margin-left: 35%" ng-controller="CompanyCtrl as c" id="main_body">
+
+	<div id="form_container">
+
+		<h1 style="margin-left:3%">Create A new Coupon</h1>
+		<!--<form id="form_36253" class="appnitro" enctype="multipart/form-data" method="post" action="CompanyView.html#/newCoupon">-->
+		<form>
+			<div class="form_description">
+
+			</div>
+			<ul style="list-style-type:none">
+
+				<li id="li_1">
+					<label class="description" for="couponTitle">Coupon Name </label>
+					<div>
+						<input ng-model="c.Coupon.title" id="couponTitle" name="couponTitle" class="element text medium" type="text" maxlength="255"
+						 value="" />
+					</div>
+				</li><br/>
+				<li id="li_2">
+					<label class="description" for="startDate">Valid From Date </label>
+					<span>
+			<input ng-model="c.Coupon.startDate" id="startDate" class="element text" size="2" type="date">
+			<span id="calendar_2">
+			<img id="cal_img_2" class="datepicker" src="../CSS/calendar.gif" alt="Pick a date.">	
+		</span>
+					<br/><br/>
+					<li id="li_3">
+						<label class="description" for="endDate">Expiration Date </label>
+						<span>
+			<input ng-model="c.Coupon.endDate" id="endDate" name="endDate" class="element text" size="2" value="" type="date"> 
+
+					<span id="calendar_3">
+			<img id="cal_img_3" class="datepicker" src="../CSS/calendar.gif" alt="Pick a date.">	
+		</span>
+						<br/><br/>
+						<li id="li_4">
+							<label class="description" for="amount">Amount Available </label>
+							<div>
+								<input ng-model="c.Coupon.amount" id="amount" name="amount" class="element text medium" type="text" maxlength="255" value=""
+								/>
+							</div>
+						</li><br/>
+						<li id="li_5">
+						Category<br/><select class="description" ng-model="c.Coupon.type">
+  <option value="RESTURANTS">RESTURANTS</option>
+  <option value="ELECTRICITY">ELECTRICITY</option>
+  <option value="FOOD">FOOD</option>
+  <option value="HEALTH">HEALTH</option>
+  <option value="SPORTS">SPORTS</option>
+  <option value="CAMPING">CAMPING</option>
+  <option value="TRAVELLING">TRAVELLING</option>
+</select><br/><br/>
+							<!--<label class="description" for="type">Category </label>
+							<div>
+								<input ng-model="c.Coupon.type" id="type" name="type" class="element text medium" type="text" maxlength="255" value="" />
+							</div>
+						</li><br/>-->
+							<li id="li_6">
+								<label class="description" for="message">Description </label>
+								<div>
+									<textarea ng-model="c.Coupon.message" id="message" name="message" class="element textarea medium"></textarea>
+								</div>
+							</li><br/>
+							<li id="li_7">
+								<label class="description" for="price">Price </label>
+								<span class="symbol">$</span>
+								<span>
+			<input ng-model="c.Coupon.price" id="price" name="price" class="element text currency" size="10" value="" type="text" />
+		</span>
+							</li><br/>
+							<li id="li_8">
+								<label class="description" for="image">Image URL </label>
+								<div>
+									<input ng-model="c.Coupon.image" id="image" name="image" class="element file" type="text" />
+								</div>
+							</li><br/>
+
+							<li class="buttons">
+								<input type="hidden" name="form_id" value="36253" />
+
+								<input value="create coupon" ng-click="c.createCoupon()" class="button_text" type="button" />
+							</li>
+			</ul>
+		</form>
+		<p ng-show="c.success">coupon created successfully</p><br/>
+		<p style="color: red" ng-show="c.failure">could not create coupon, please check all required fields</p>
+	</div>
+
+
+</div>
+<hr/>
+<hr/>
+<hr/>
+<footer>
+	<img style="margin-left: 165px" src="../CSS/images/footercompany.gif" />
+</footer>

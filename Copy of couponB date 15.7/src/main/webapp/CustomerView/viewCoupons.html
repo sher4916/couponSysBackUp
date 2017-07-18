@@ -1,0 +1,80 @@
+<!--<head>
+     <link rel="stylesheet" href="../CSS/w3.css">
+</head>-->
+<!--<img src="coupons.jpg"><br><br>-->
+<div class="details" id="buttons" ng-controller="PurchaseCtrl as b">
+    <h3> <b>Select Category</b></h3>
+    <div class="btn-group">
+        <button ng-click="b.filter={}" class="btn-primary btn-lg"><b>All Coupons</b></button>
+        <button ng-click="b.filter={ 'type' : 'RESTURANTS' }" class="btn-primary btn-lg">RESTURANTS</button>
+        <button ng-click="b.filter={ 'type' : 'SPORTS' }" class="btn-primary btn-lg">SPORTS</button>
+        <button ng-click="b.filter={ 'type' : 'FOOD' }" class="btn-primary btn-lg">FOOD</button>
+        <button ng-click="b.filter={ 'type' : 'ELECTRICITY' }" class="btn-primary btn-lg">ELECTRICITY</button>
+        <button ng-click="b.filter={ 'type' : 'HEALTH' }" class="btn-primary btn-lg">HEALTH</button>
+        <button ng-click="b.filter={ 'type' : 'CAMPING' }" class="btn-primary btn-lg">CAMPING</button>
+        <button ng-click="b.filter={ 'type' : 'TRAVELLING' }" class="btn-primary btn-lg">TRAVELLING</button><br/><br/>
+    </div>
+    <div style="align-items: inherit" >
+     
+        <a>Submit a price to view your coupons up to their cost price</a><br/><br/>
+
+        <a> enter a price: </a> <input ng-model="b.coupon.price" value="price" type="text"></input>
+        <input class="btn-primary btn-lg" ng-click="b.filterByPrice()" value="price" type="button"></input>
+        <input class="btn-primary btn-lg" ng-click="b.refresh()" value="refresh all coupons" type="button"></input><br/><br/>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <tr>
+                
+                <th class="th1"><button class="btn-header" ng-click="b.setOrder('id')">Coupon ID
+           <span ng-hide="b.goUp">▼</span>
+                <span ng-show="b.goUp">▲</span>
+          </th></button>
+               
+                <th class="th1"><button class="btn-header" ng-click="b.setOrder('title')">Coupon Title
+           <span ng-hide="b.goUp">▼</span>
+                <span ng-show="b.goUp">▲</span>
+          </th></button>
+                
+                <th class="th1"><button class="btn-header" ng-click="b.setOrder('price')"> Coupon Price
+           <span ng-hide="b.goUp">▼</span>
+                <span ng-show="b.goUp">▲</span>
+          </th></button>
+               
+                <th class="th1"><button style="padding: 11px 60px" class="btn-header" ng-click="b.setOrder('message')">Coupon Description
+           <span ng-hide="b.goUp">▼</span>
+                <span ng-show="b.goUp">▲</span>
+          </th></button>
+              
+                <th class="th1"><button class="btn-header" ng-click="b.setOrder('type')"> Category
+           <span ng-hide="b.goUp">▼</span>
+                <span ng-show="b.goUp">▲</span>
+          </th></button>
+                
+                <th class="th1"><button class="btn-header" ng-click="b.setOrder('startDate')">Valid From
+           <span ng-hide="b.goUp">▼</span>
+                <span ng-show="b.goUp">▲</span>
+          </th></button>
+               
+                <th class="th1"><button class="btn-header" ng-click="b.setOrder('endDate')"> Expiration Date
+           <span ng-hide="b.goUp">▼</span>
+                <span ng-show="b.goUp">▲</span>
+          </th></button>
+                <!--<th>Coupon Image</th>-->
+                <tr>
+
+                    <tr ng-repeat="c in b.coupons | filter : b.filter | orderBy : b.order : b.goUp">
+                        <td>{{c.id}}</td>
+                        <td>{{c.title}}</td>
+                        <td>{{c.price}}</td>
+                        <td>{{c.message}}</td>
+                        <td>{{c.type}}</td>
+                        <td>{{c.startDate | date:'longDate'}}</td>
+                        <td>{{c.endDate | date:'longDate'}}</td>
+                        <!--<td>{{c.image}}</td>-->
+                    </tr>
+        </table>
+    </div>
+</div>
+
+<my-kendall></my-kendall>

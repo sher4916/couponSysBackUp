@@ -1,0 +1,36 @@
+<body id="main_body">
+
+	<div ng-controller="adminCtrl as a" id="form_container">
+
+		<h1 style="margin-left:3%">Create A new Customer</h1>
+		<form ng-submit="a.createCustomer1(theForm.$valid)" name="theForm" class="css-form" novalidate="novalidate">
+			<ul style="list-style-type:none">
+
+				<div>
+					<li id="li_1">
+						<label class="description" for="element_1">Customer Name </label>
+
+						<input name="custName" ng-model="a.formMain.custName" type="text" maxlength="255" id="custName" required />
+						<pre ng-show="theForm.custName.$touched && theForm.custName.$invalid">Customer Name is required</pre>
+
+					</li>
+				</div><br/>
+				<div>
+					<li id="li_4">
+						<label class="description" for="element_2">Customer Password </label>
+
+						<input name="password" ng-model="a.formMain.password" id="password" type="text" maxlength="255" required />
+						<pre ng-show="theForm.password.$touched && theForm.password.$invalid">Password is required</pre>
+
+					</li>
+				</div><br/>
+
+				<li class="buttons">
+					<button class="button_text" type="submit" name="create" value="create">Create</button>
+				</li>
+			</ul>
+		</form>
+
+	</div>
+
+</body>

@@ -1,0 +1,35 @@
+<body id="main_body">
+
+	<div ng-controller="adminCtrl as a" id="form_container">
+
+		<h1 style="margin-left:3%">Create A new Customer</h1>
+		<form id="form_36253" class="appnitro" enctype="multipart/form-data" method="post" action="">
+			<div class="form_description">
+
+			</div>
+			<ul style="list-style-type:none">
+
+				<li id="li_1">
+					<label class="description" for="element_1">Customer Name </label>
+					<div>
+						<input  ng-model="a.customer.custName" id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value="" required  />
+					</div>
+				</li><br/>
+						<li id="li_4">
+							<label class="description" for="element_2">Customer Password </label>
+							<div>
+								<input ng-model="a.customer.password" id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value="" required  />
+							</div>
+						</li><br/>
+						
+						<li class="buttons">
+							<input type="hidden" name="form_id" value="36253" />
+
+							<input ng-click="a.createCustomer()" id="saveForm" class="button_text" type="button" name="create" value="create" />
+						</li>
+			</ul>
+		</form>
+
+	</div>
+
+</body>
