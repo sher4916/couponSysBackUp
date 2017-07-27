@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html ng-app="CouponSystemApp" lang="en">
+
+<head>
+  <script src="../angular.js"></script>
+  <script src="../angular-ui-router.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="../bootstrap.js"></script>
+   
+  <script src="webApiService.js"></script>
+  <script src="customer.route.config.js"></script>
+  
+  <script src="purchase.ctrl.js"></script>
+  <script src="../Directive/detailesDirective.js"></script>
+  <script src="../sweetalert.min.js"></script>
+ 
+ 
+  <meta charset="utf-8">
+  <title>Coupons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  
+
+  <link href="../CSS/bootstrap.css" rel="stylesheet">
+  <link href="../CSS/sweetalert.css" rel="stylesheet">
+  <style type="text/css">
+    body {
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+
+    .sidebar-nav {
+      padding: 9px 0;
+    }
+
+    @media (max-width: 980px) {
+      /* Enable use of floated navbar text */
+      .navbar-text.pull-right {
+        float: none;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+  </style>
+  <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+<link rel='shortcut icon' type='image/x-icon' href='http://localhost:8080/coupons/CSS/images/favicon.ico' />
+ <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/coupons/CSS/images/favicon-16x16.png" >
+
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/coupons/CSS/images/favicon-32x32.png">
+
+
+</head>
+
+<body ng-controller="PurchaseCtrl as c">
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <div class="nav-collapse collapse">
+          <p class="navbar-text">
+            <li class="dropdown pull-right">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome {{c.customer.custName}}<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#/couponsforpurchase">Purchase Coupon</a></li>
+                <li><a href="#/getAllPurchasedCoupons">Your Coupons</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#/accountDetails">Acount Details</a></li>
+                <li><a href="http://localhost:8080/coupons/Logout">Log Out</a></li>
+              </ul>
+            </li>
+          </p>
+          <ul class="nav">
+            <li class="active"><a href="#/main">Home</a></li>
+            <li><a href="#/couponsforpurchase">Purchase Coupon</a></li>
+          </ul>
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span2">
+        <div class="well sidebar-nav">
+          <ul class="nav nav-list">
+            <li class="nav-header">Shop</li>
+            <li class="active"><a href="#/main">Top 3</a></li>
+            <li><a href="#/couponsforpurchase">Purchase Coupon</a></li>
+            <li><a href="#/getAllPurchasedCoupons">Your Coupons</a></li>
+            <li><a href="#/viewCouponsByPrice">Your Coupons By Price</a></li>
+            <li><a href="http://localhost:8080/coupons/Logout">Log Out</a></li>
+          </ul>
+        </div>
+        <!--/.well -->
+      </div>
+      <!--/span-->
+      <div class="span8">
+        <div class="hero-unit">
+          <img src="../CSS/images/setShop.png"></img>
+        </div>
+        <div ui-view></div>
+
+        <hr>
+
+        <footer>
+
+
+    <img src="../CSS/images/header6.gif"/>
+
+        </footer>
+
+      </div>
+      <!--/.fluid-container-->
+
+      <!-- Le javascript
+    ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="http://getbootstrap.com/2.3.2/assets/js/jquery.js"></script>
+      <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-transition.js"></script>
+      <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-alert.js"></script>
+      <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-modal.js"></script>
+      <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-dropdown.js"></script>
+      <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-scrollspy.js"></script>
+      <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-tab.js"></script>
+      <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-tooltip.js"></script>
+      <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-popover.js"></script>
+      <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-button.js"></script>
+      <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-collapse.js"></script>
+      <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-carousel.js"></script>
+      <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-typeahead.js"></script>
+
+</body>
+
+</html>

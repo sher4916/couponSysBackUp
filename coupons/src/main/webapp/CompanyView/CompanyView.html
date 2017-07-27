@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="CouponSystemApp">
+
+<head>
+    <script src="../angular.js"></script>
+    <script src="../angular-ui-router.js"></script>
+    <script src="../bootstrap.js"></script>
+    <script src="companyWebAPI.srvs.js"></script>
+    <script src="CompanyRoute.js"></script>
+    <script src="company.ctrl.js"></script>
+    <script src="../Directive/detailesDirective.js"></script>
+    <script src="../sweetalert.min.js"></script>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+    <!--<link href="CustomerStyle.css" rel="stylesheet" />-->
+    
+    <link rel="stylesheet" href="../CSS/w3.css">
+    <!--<link rel="stylesheet" href="../CSS/fishform.css">-->
+    <link rel='shortcut icon' type='image/x-icon' href='http://localhost:8080/coupons/CSS/images/favicon.ico' />
+ <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:8080/coupons/CSS/images/favicon-16x16.png" >
+
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:8080/coupons/CSS/images/favicon-32x32.png">
+
+</head>
+
+<body>
+    <!--<header class="w3-black">
+        <h1 style="font-size:36px" "margin-left:15%"> Coupon System </h1>
+    </header>-->
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:11%">
+        <h3 class="w3-bar-item">Menu</h3>
+        <a href="#/main" class="w3-bar-item w3-button">Main Welcome Company</a>
+        <a href="#/createCoupon" class="w3-bar-item w3-button">Create Coupon</a>
+        <a href="#/getCompanyCoupons" class="w3-bar-item w3-button">Company Coupons</a><!--here i need removeCoupon & update Coupon-->
+        <a href="#/companydetails" class="w3-bar-item w3-button">Company Details</a>
+        <a href="http://localhost:8080/coupons/Logout" class="w3-bar-item w3-button">Log Out</a>
+    </div>
+    <!-- Page Content -->
+    <div style="margin-left:10%">
+        <!--<div>-->
+<!--w3-indigo-->
+        <div ng-controller="CompanyCtrl as b" class="w3-container w3-indigo">
+
+            <h1>Welcome {{b.company.compName}}</h1>
+        </div>
+
+
+        <div ui-view></div>
+
+    </div>
+
+
+
+  
+
+   
+ 
+</body>
+
+</html>

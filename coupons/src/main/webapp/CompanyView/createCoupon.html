@@ -1,0 +1,91 @@
+<head>
+	 <link rel="stylesheet" href="../CSS/fishform.css">
+</head>
+<div id="form" ng-controller="CompanyCtrl as c">
+
+<div class="fish" id="fish"></div>
+<div class="fish" id="fish2"></div>
+
+<form ng-submit="c.createCoupon1(theForm.$valid)" name="theForm" novalidate="novalidate" id="waterform">
+
+<div class="formgroup" id="title-form">
+    <label for="name">Coupon Name*</label>
+    <input title="Set Coupon Title" ng-model="c.formMain.title" type="text" id="title" name="title" required/>
+	<pre class="required" ng-show="theForm.title.$touched && theForm.title.$invalid">Coupon Title is required</pre>
+</div>
+<div class="formgroup" id="startDate-form">
+    <label for="startDate">Valid From Date*</label>
+    <input title="Set Coupon Start Date" ng-model="c.formMain.startDate" type="date" id="startDate" name="startDate" required/>
+	<span id="calendar_2">
+			<img id="cal_img_2" class="datepicker" src="../CSS/calendar.gif" alt="Pick a date.">	
+		</span>
+	<div class="required" ng-show="theForm.$submitted || theForm.startDate.$touched">
+							<span ng-show="theForm.startDate.$error.required">Coupon Start Date is required. [format example: 2018-05-31 ]</span>
+							<span ng-show="theForm.startDate.$error.date">This is not a valid Date.</span>
+						</div>
+</div>
+<div class="formgroup" id="endDate-form">
+    <label for="endDate">Expiration Date*</label>
+    <input title="Set Coupon End Date" ng-model="c.formMain.endDate" type="date" id="endDate" name="endDate" required/>
+	<span id="calendar_2">
+			<img id="cal_img_2" class="datepicker" src="../CSS/calendar.gif" alt="Pick a date.">	
+		</span>
+	<div class="required" ng-show="theForm.$submitted || theForm.endDate.$touched">
+							<span ng-show="theForm.endDate.$error.required">Coupon End Date is required. [format example: 2018-05-31 ]</span>
+							<span ng-show="theForm.endDate.$error.date">This is not a valid Date.</span>
+						</div>
+</div>
+<div class="formgroup" id="amount-form">
+    <label for="amount">Amount Available*</label>
+    <input title="Set Coupon amount" ng-model="c.formMain.amount" type="number" id="amount" name="amount" required/>
+	<div class="required" ng-show="theForm.$submitted || theForm.amount.$touched">
+							<span ng-show="theForm.amount.$error.required">Coupon Amount Available is required.</span>
+							<span ng-show="theForm.amount.$error.integer">This is not a valid Number.</span>
+							<!--<span ng-show="theForm.amount.$error.min">This is not a valid Number.</span>-->
+						</div>
+</div>
+<div class="formgroup" id="type-form">
+<label for="type">Category*</label>
+<select ng-model="c.formMain.type" id="type" name="type" required>
+  <option value="RESTURANTS">RESTURANTS</option>
+  <option value="ELECTRICITY">ELECTRICITY</option>
+  <option value="FOOD">FOOD</option>
+  <option value="HEALTH">HEALTH</option>
+  <option value="SPORTS">SPORTS</option>
+  <option value="CAMPING">CAMPING</option>
+  <option value="TRAVELLING">TRAVELLING</option>
+</select>
+<pre class="required" ng-show="theForm.type.$submitted">Please Choose A Category</pre>
+</div>
+
+<div class="formgroup" id="message-form">
+    <label for="message">Description*</label>
+    <textarea ng-model="c.formMain.message" id="message" name="message" required></textarea>
+	<pre class="required" ng-show="theForm.message.$touched && theForm.message.$invalid">Coupon Description is required</pre>
+</div>
+
+<div class="formgroup" id="price-form">
+    <label for="price">Price*</label><span class="symbol">$</span>
+    <input title="Set Coupon price" ng-model="c.formMain.price" type="number" id="price" name="price" required/>
+	<div class="required" ng-show="theForm.$submitted || theForm.price.$touched">
+							<span ng-show="theForm.price.$error.required">Coupon Price is required.</span>
+							<span ng-show="theForm.price.$error.integer">This is not a valid Number.</span>
+						</div>
+</div>
+
+<div class="formgroup" id="image-form">
+    <label for="image">Image URL*</label>
+    <input title="Set Coupon Image" ng-model="c.formMain.image" type="text" id="image" name="image" required/>
+	<pre class="required" ng-show="theForm.image.$touched && theForm.image.$invalid">Coupon Image is required</pre>
+</div>
+<!--<button type="submit" name="create" value="Create">Create Coupon!</button>-->
+	<input type="submit" value="Create Coupon!" />
+</form>
+<br/><br/><br/><br/><br/><br/>
+</div>
+<hr/>
+<hr/>
+<hr/>
+<footer>
+	<img style="margin-left: 165px" src="../CSS/images/footercompany.gif" />
+</footer>

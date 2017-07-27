@@ -1,0 +1,53 @@
+<body id="main_body">
+
+	<div ng-controller="adminCtrl as a" id="form_container">
+
+		<h1 style="margin-left:3%">Create A new Company</h1>
+		<form ng-submit="a.createCompany1(theForm.$valid)" name="theForm" class="css-form" novalidate="novalidate">
+			<ul style="list-style-type:none">
+
+				<div>
+					<li id="li_1">
+						<label class="description" for="element_1">Company Name </label><br/>
+
+						<input title="set Company Name" name="compName" ng-model="a.formMain.compName" type="text" maxlength="255" id="compName"
+						 required />
+						<pre class="required" ng-show="theForm.compName.$touched && theForm.compName.$invalid">Company Name is required</pre>
+
+					</li>
+				</div><br/>
+				<div>
+					<li id="li_4">
+						<label class="description" for="element_2">Company Password </label><br/>
+
+						<input title="set password" name="password" ng-model="a.formMain.password" id="password" type="text" maxlength="255" required
+						/>
+						<pre class="required" ng-show="theForm.password.$touched && theForm.password.$invalid">Password is required</pre>
+
+					</li>
+				</div><br/>
+				<div>
+					<li id="li_4">
+						<label class="description" for="element_2">Company Email </label><br/>
+
+						<input title="set email" name="email" ng-model="a.formMain.email" id="email" type="email" maxlength="255" required />
+						<!--<div>
+							<span class="required" ng-show="theForm.email.$touched && theForm.email.$invalid">Email is required</span>
+							<span class="required" ng-show="theForm.email.$error.email">This is not a valid email.</span>
+						</div>-->
+						<div class="required" ng-show="theForm.$submitted || theForm.email.$touched">
+							<span ng-show="theForm.email.$error.required">Email is required.</span>
+							<span ng-show="theForm.email.$error.email">This is not a valid email.</span>
+						</div>
+					</li>
+				</div><br/>
+
+				<li class="buttons">
+					<button class="buttonadmin" type="submit" name="create" value="create">Create</button>
+				</li>
+			</ul>
+		</form>
+
+	</div>
+
+</body>

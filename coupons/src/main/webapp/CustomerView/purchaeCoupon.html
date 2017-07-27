@@ -1,0 +1,49 @@
+<!--<head>
+    <link rel="stylesheet" href="../CSS/w3.css">
+</head>-->
+<!--<img src="coupons.jpg"><br><br>-->
+<div class="details" id="buttons" ng-controller="PurchaseCtrl as b">
+<h1>Purchase A Coupon</h1>
+<p>Here is how to buy your new coupon:<br/> 
+1. Select which category you like or scroll down to view all available coupons<br/>    
+2. click on the 'buy' button next to the coupon you wish to buy<br/> 3. confirm your purchase</p><br/>
+<div class="btn-group">
+    <button ng-click="b.filter={}" class="btn-primary btn-lg"><b>All Coupons</b></button>
+    <button ng-click="b.filter={ 'type' : 'RESTURANTS' }" class="btn-primary btn-lg">RESTURANTS</button>
+    <button ng-click="b.filter={ 'type' : 'SPORTS' }" class="btn-primary btn-lg">SPORTS</button>
+    <button ng-click="b.filter={ 'type' : 'FOOD' }" class="btn-primary btn-lg">FOOD</button>
+    <button ng-click="b.filter={ 'type' : 'ELECTRICITY' }" class="btn-primary btn-lg">ELECTRICITY</button>
+    <button ng-click="b.filter={ 'type' : 'HEALTH' }" class="btn-primary btn-lg">HEALTH</button>
+    <button ng-click="b.filter={ 'type' : 'CAMPING' }" class="btn-primary btn-lg">CAMPING</button>
+    <button ng-click="b.filter={ 'type' : 'TRAVELLING' }" class="btn-primary btn-lg">TRAVELLING</button><br/><br/><br/>
+ </div>  
+ <div class="table-responsive">
+    <table class="table table-hover">
+        <tr>
+            <th></th>
+            <th>Coupon ID</th>
+            <th>Coupon Title</th>
+            <th>Coupon Price</th>
+            <th>Coupon Description</th>
+            <th>Category</th>
+            <th>In Stock Amount</th>
+            <th>Valid From</th>
+            <th>Expiration Date</th>
+            <!--<th>Coupon Image</th>-->
+            <tr>
+
+                <tr ng-repeat="c in b.couponsForPurchase | filter : b.filter" >
+                    <td><button class="buttoncomp" id="buy" ng-click="b.buy(c)" ng-href="#/couponPurchased")>buy</button></td>
+                    <td>{{c.id}}</td>
+                    <td>{{c.title}}</td>
+                    <td>{{c.price}}</td>
+                    <td>{{c.message}}</td>
+                    <td>{{c.type}}</td>
+                    <td>{{c.amount}}</td>
+                    <td>{{c.startDate}}</td>
+                    <td>{{c.endDate}}</td>
+                    <!--<td>{{c.image}}</td>-->
+                </tr>
+    </table>
+ </div>
+</div>
